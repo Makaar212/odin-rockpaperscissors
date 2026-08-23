@@ -3,7 +3,7 @@ console.log("Hello World!");
 function getComputerChoice() {
   cpuChoice = Math.random();
 
-  switch (cpuChoice) {
+  switch (true) {
     case cpuChoice <= 0.33:
       return "Rock";
       break;
@@ -15,3 +15,5 @@ function getComputerChoice() {
       break;
   }
 }
+
+console.log(getComputerChoice());
