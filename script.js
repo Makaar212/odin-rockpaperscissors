@@ -16,4 +16,8 @@ function getComputerChoice() {
   }
 }
 
-console.log(getComputerChoice());
+function getHumanChoice() {
+  let userMove = prompt("Enter your choice of move");
+
+  return userMove;
+}
