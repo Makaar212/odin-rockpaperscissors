@@ -5,13 +5,13 @@ function getComputerChoice() {
 
   switch (true) {
     case cpuChoice <= 0.33:
-      return "Rock";
+      return "rock";
       break;
     case cpuChoice <= 0.66:
-      return "Scissors";
+      return "scissors";
       break;
     case cpuChoice <= 1:
-      return "Paper";
+      return "paper";
       break;
   }
 }
@@ -19,5 +19,10 @@ function getComputerChoice() {
 function getHumanChoice() {
   let userMove = prompt("Enter your choice of move");
 
-  return userMove;
+  return userMove.toLowerCase();
 }
+
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound(humanChoice, computerChoice) {}
