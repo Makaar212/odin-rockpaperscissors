@@ -61,6 +61,8 @@ function playRound(humanChoice, computerChoice) {
   ) {
     console.log("You win! paper beats rock");
     humanScore++;
+  } else {
+    console.log("Draw!");
   }
 }
 
@@ -72,6 +74,9 @@ function playGame() {
     let computerChoice = getComputerChoice();
 
     playRound(humanChoice, computerChoice);
+    if (humanChoice === computerChoice) {
+      currentRounds--;
+    }
 
     currentRounds++;
   }
