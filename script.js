@@ -25,4 +25,43 @@ function getHumanChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
-function playRound(humanChoice, computerChoice) {}
+function playRound(humanChoice, computerChoice) {
+  // Rock conditions
+  if (humanChoice.toLowerCase() === "rock" && computerChoice === "paper") {
+    console.log("You lose! paper beats rock");
+    computerScore++;
+  } else if (
+    humanChoice.toLowerCase() === "rock" &&
+    computerChoice === "scissors"
+  ) {
+    console.log("You win! rock beats scissors");
+    humanScore++;
+    // Scissor conditions
+  } else if (
+    humanChoice.toLowerCase() === "scissors" &&
+    computerChoice === "paper"
+  ) {
+    console.log("You win! scissors beats paper");
+    humanScore++;
+  } else if (
+    humanChoice.toLowerCase() === "scissors" &&
+    computerChoice === "rock"
+  ) {
+    console.log("You lose! rock beats scissors");
+    computerScore++;
+
+    // Paper conditions
+  } else if (
+    humanChoice.toLowerCase() === "paper" &&
+    computerChoice === "scissors"
+  ) {
+    console.log("You lose! scissors beats paper");
+    computerScore++;
+  } else if (
+    humanChoice.toLowerCase() === "paper" &&
+    computerChoice === "rock"
+  ) {
+    console.log("You win! paper beats rock");
+    humanScore++;
+  }
+}
