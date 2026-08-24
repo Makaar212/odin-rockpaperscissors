@@ -1,5 +1,3 @@
-console.log("Hello World!");
-
 function getComputerChoice() {
   cpuChoice = Math.random();
 
@@ -65,3 +63,24 @@ function playRound(humanChoice, computerChoice) {
     humanScore++;
   }
 }
+
+function playGame() {
+  const NUMBER_OF_ROUNDS = 5;
+  let currentRounds = 0;
+  while (currentRounds < NUMBER_OF_ROUNDS) {
+    let humanChoice = getHumanChoice();
+    let computerChoice = getComputerChoice();
+
+    playRound(humanChoice, computerChoice);
+
+    currentRounds++;
+  }
+
+  if (humanScore > computerScore) {
+    alert("You won! nice job");
+  } else {
+    alert("You lost, womp womp womp");
+  }
+}
+
+playGame();
