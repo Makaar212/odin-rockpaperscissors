@@ -87,5 +87,13 @@ function playGame(numberOfRounds) {
     alert("You lost, womp womp womp");
   }
 }
+const form = document.querySelector("#number");
+const inputField = document.querySelector("#roundCounter");
+let numberOfRounds = 0;
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  numberOfRounds = parseInt(inputField.value);
+  inputField.value = "";
+});
 
 playGame(5);
