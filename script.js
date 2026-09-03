@@ -20,6 +20,10 @@ const computerScoreDisplay = document.querySelector("#computer-score");
 let numberOfRounds = 0;
 let humanScore = 0;
 let computerScore = 0;
+let currNumberOfRounds = 0;
+
+// Custom event
+const endGameEvent = new CustomEvent("endgame");
 
 function playRound(humanChoice, computerChoice) {
   // Rock conditions
@@ -64,6 +68,11 @@ function playRound(humanChoice, computerChoice) {
   }
   computerScoreDisplay.textContent = "Computer score: " + computerScore;
   humanScoreDisplay.textContent = "Your score: " + humanScore;
+  currNumberOfRounds++;
+
+  if (currNumberOfRounds >= numberOfRounds) {
+    form.dispatchEvent(endGameEvent);
+  }
 }
 
 form.addEventListener("submit", (e) => {
@@ -78,6 +87,26 @@ form.addEventListener("submit", (e) => {
   form.style.display = "none";
 
   // playGame(numberOfRounds);
+});
+
+form.addEventListener("endgame", (e) => {
+  // show game result
+  roundResult.textContent =
+    computerScore > humanScore
+      ? "Computer Won! You lost"
+      : computerScore < humanScore
+        ? "You Won! Computer Lost!"
+        : "Draw! No One Won!";
+  buttons.forEach((button) => {
+    button.style.display = "none";
+  });
+
+  // show form again
+  form.style.display = "flex";
+  inputField.placeholder = "Play Again?";
+  computerScore = 0;
+  humanScore = 0;
+  currNumberOfRounds = 0;
 });
 
 const buttonContainer = document.querySelector("#button-container");
