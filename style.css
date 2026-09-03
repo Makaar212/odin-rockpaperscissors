@@ -20,5 +20,11 @@ button {
 
 #score-container {
   display: flex;
-  gap: 8px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#human-score,
+#computer-score {
+  margin: 0;
 }

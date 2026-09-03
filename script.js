@@ -15,6 +15,8 @@ const form = document.querySelector("#number");
 const inputField = document.querySelector("#roundCounter");
 const buttons = document.querySelectorAll("button");
 const roundResult = document.querySelector("#round-result");
+const humanScoreDisplay = document.querySelector("#human-score");
+const computerScoreDisplay = document.querySelector("#computer-score");
 let numberOfRounds = 0;
 let humanScore = 0;
 let computerScore = 0;
@@ -60,6 +62,8 @@ function playRound(humanChoice, computerChoice) {
   } else {
     roundResult.textContent = "Draw!";
   }
+  computerScoreDisplay.textContent = "Computer score: " + computerScore;
+  humanScoreDisplay.textContent = "Your score: " + humanScore;
 }
 
 form.addEventListener("submit", (e) => {
