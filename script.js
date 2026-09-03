@@ -4,13 +4,10 @@ function getComputerChoice() {
   switch (true) {
     case cpuChoice <= 0.33:
       return "rock";
-      break;
     case cpuChoice <= 0.66:
       return "scissors";
-      break;
     case cpuChoice <= 1:
       return "paper";
-      break;
   }
 }
 
@@ -91,6 +88,7 @@ const form = document.querySelector("#number");
 const inputField = document.querySelector("#roundCounter");
 const buttons = document.querySelectorAll("button");
 let numberOfRounds = 0;
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   numberOfRounds = parseInt(inputField.value);
@@ -103,4 +101,21 @@ form.addEventListener("submit", (e) => {
   form.style.display = "none";
 
   // playGame(numberOfRounds);
+});
+
+const buttonContainer = document.querySelector("#button-container");
+
+buttonContainer.addEventListener("click", (e) => {
+  target = e.target;
+  switch (target.id) {
+    case "paper":
+      playRound("paper", getComputerChoice());
+      break;
+    case "scissors":
+      playRound("scissors", getComputerChoice());
+      break;
+    case "rock":
+      playRound("rock", getComputerChoice());
+      break;
+  }
 });

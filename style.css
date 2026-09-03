@@ -17,3 +17,8 @@ form {
 button {
   display: none;
 }
+
+#score-container {
+  display: flex;
+  gap: 8px;
+}
