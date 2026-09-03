@@ -66,8 +66,8 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
-function playGame() {
-  const NUMBER_OF_ROUNDS = 5;
+function playGame(numberOfRounds) {
+  const NUMBER_OF_ROUNDS = numberOfRounds;
   let currentRounds = 0;
   while (currentRounds < NUMBER_OF_ROUNDS) {
     let humanChoice = getHumanChoice();
@@ -88,4 +88,4 @@ function playGame() {
   }
 }
 
-playGame();
+playGame(5);
