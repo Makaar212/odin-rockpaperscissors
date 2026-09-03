@@ -11,38 +11,37 @@ function getComputerChoice() {
   }
 }
 
-function getHumanChoice() {
-  let userMove = prompt("Enter your choice of move");
-
-  return userMove.toLowerCase();
-}
-
+const form = document.querySelector("#number");
+const inputField = document.querySelector("#roundCounter");
+const buttons = document.querySelectorAll("button");
+const roundResult = document.querySelector("#round-result");
+let numberOfRounds = 0;
 let humanScore = 0;
 let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
   // Rock conditions
   if (humanChoice.toLowerCase() === "rock" && computerChoice === "paper") {
-    console.log("You lose! paper beats rock");
+    roundResult.textContent = "You lose! paper beats rock";
     computerScore++;
   } else if (
     humanChoice.toLowerCase() === "rock" &&
     computerChoice === "scissors"
   ) {
-    console.log("You win! rock beats scissors");
+    roundResult.textContent = "You win! rock beats Scissors";
     humanScore++;
     // Scissor conditions
   } else if (
     humanChoice.toLowerCase() === "scissors" &&
     computerChoice === "paper"
   ) {
-    console.log("You win! scissors beats paper");
+    roundResult.textContent = "You win! scissors beats paper";
     humanScore++;
   } else if (
     humanChoice.toLowerCase() === "scissors" &&
     computerChoice === "rock"
   ) {
-    console.log("You lose! rock beats scissors");
+    roundResult.textContent = "You lose! rock beats scissors";
     computerScore++;
 
     // Paper conditions
@@ -50,23 +49,18 @@ function playRound(humanChoice, computerChoice) {
     humanChoice.toLowerCase() === "paper" &&
     computerChoice === "scissors"
   ) {
-    console.log("You lose! scissors beats paper");
+    roundResult.textContent = "You lose! scissors beats paper";
     computerScore++;
   } else if (
     humanChoice.toLowerCase() === "paper" &&
     computerChoice === "rock"
   ) {
-    console.log("You win! paper beats rock");
+    roundResult.textContent = "You win! paper beats rock";
     humanScore++;
   } else {
-    console.log("Draw!");
+    roundResult.textContent = "Draw!";
   }
 }
-
-const form = document.querySelector("#number");
-const inputField = document.querySelector("#roundCounter");
-const buttons = document.querySelectorAll("button");
-let numberOfRounds = 0;
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
