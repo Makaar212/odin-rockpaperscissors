@@ -13,3 +13,7 @@ form {
   gap: 3px;
   flex-direction: column;
 }
+
+button {
+  display: none;
+}

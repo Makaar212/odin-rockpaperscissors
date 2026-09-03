@@ -89,11 +89,18 @@ function playGame(numberOfRounds) {
 }
 const form = document.querySelector("#number");
 const inputField = document.querySelector("#roundCounter");
+const buttons = document.querySelectorAll("button");
 let numberOfRounds = 0;
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   numberOfRounds = parseInt(inputField.value);
   inputField.value = "";
-});
 
-playGame(5);
+  // make form disapear and buttons appear
+  buttons.forEach((button) => {
+    button.style.display = "block";
+  });
+  form.style.display = "none";
+
+  // playGame(numberOfRounds);
+});
