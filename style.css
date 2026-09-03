@@ -28,3 +28,8 @@ button {
 #computer-score {
   margin: 0;
 }
+
+#result-container {
+  width: 170px;
+  height: 36px;
+}
