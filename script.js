@@ -63,27 +63,6 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
-function playGame(numberOfRounds) {
-  const NUMBER_OF_ROUNDS = numberOfRounds;
-  let currentRounds = 0;
-  while (currentRounds < NUMBER_OF_ROUNDS) {
-    let humanChoice = getHumanChoice();
-    let computerChoice = getComputerChoice();
-
-    playRound(humanChoice, computerChoice);
-    if (humanChoice === computerChoice) {
-      currentRounds--;
-    }
-
-    currentRounds++;
-  }
-
-  if (humanScore > computerScore) {
-    alert("You won! nice job");
-  } else {
-    alert("You lost, womp womp womp");
-  }
-}
 const form = document.querySelector("#number");
 const inputField = document.querySelector("#roundCounter");
 const buttons = document.querySelectorAll("button");
